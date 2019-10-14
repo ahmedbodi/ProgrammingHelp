@@ -1,0 +1,132 @@
+<html>
+<head>
+  <title>Configuration Management (CM)</title>
+  <basefont face="Segoe UI" size="2" />
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="exporter-version" content="Evernote Windows/308716 (en-US, DDL); Windows/10.0.0 (Win64);"/>
+  <style>
+    body, td {
+      font-family: Segoe UI;
+      font-size: 10pt;
+    }
+  </style>
+</head>
+<body>
+<a name="747"/>
+<h1>Configuration Management (CM)</h1>
+<div>
+<table bgcolor="#D4DDE5" border="0">
+<tr><td><b>Created:</b></td><td><i>05/05/2016 11:45</i></td></tr>
+<tr><td><b>Updated:</b></td><td><i>11/05/2016 11:31</i></td></tr>
+<tr><td><b>Author:</b></td><td><i>ahmedbodi@crypto-expert.com</i></td></tr>
+</table>
+</div>
+<br/>
+
+<div>
+<span>
+<div>Configuration Method is a collection of procedures used to manage aspects of the quality in an evolving system.</div>
+<div><br/></div>
+<div>It is principally concerned with the control of change and visibility of software products</div>
+<div><br/></div>
+<div>The CM procedures are usually described by a set of standards contained in an organisations Quality Assurance Manual, and are themselves subject to change and improvement.</div>
+<div><br/></div>
+<div>Why do we need a Configuration Method:</div>
+<div>     - Many software projects are characterised are:</div>
+<div>          - Large size (very many artefacts)</div>
+<div>          - Long Term (sometimes maintained over decades)</div>
+<div>          - Subject to continuous change and development</div>
+<div>     - Software modules may exist in several versions and releases</div>
+<div>          - Each version and release will have its own supporting documentation, specification, design, testing.</div>
+<div><br/></div>
+<div>     - These artefacts are heavily inter-related</div>
+<div>          - Changes to one may affect literally hundreds of others</div>
+<div>     - In such an environment, tight control of these artefacts and their relationships in neccessary to avoid chaos</div>
+<div><br/></div>
+<div>Configuration Management in Practice</div>
+<div>     - From a project management perspective, CM allows a snapshot to be generated of the state of every aspect of the development at any given time.</div>
+<div>          - Useful for measuring progress</div>
+<div>          - If things go wrong, it allows the whole project to be re-wound to last known good state</div>
+<div>     -  From a developers point of view, it facilitates communication of changes taking place elsewhere in the project that directly affect them and their work</div>
+<div>          - E.g. is a designer using the latest version of the spec</div>
+<div>          - E.g. is a programmer using the latest deign document</div>
+<div><br/></div>
+<div>The principles of Configuration Management:</div>
+<div>     - Identification of Configurable Items (CI)</div>
+<div>          - The unique (and uniform) identification of every document and program module that is brought under configuration)</div>
+<div>               - In all their versions, editions, revisions and releases</div>
+<div>     - Change Control</div>
+<div>          - Mechanisms to ensure changes are properly engineered, tested and reviewed before being accepted</div>
+<div>     - Status Accounting</div>
+<div>          - Recording and reporting on all aspects of CI's</div>
+<div>              - History of items, relationships between them etc</div>
+<div>     - Configuration Assurance</div>
+<div>          - A quality procedure to monitor the CM effort and ensure it is working effectively</div>
+<div><br/></div>
+<div>Configuration Management Planning</div>
+<div>     - The starting point for a CM plan should be a set of standards adapted to fit the particular project</div>
+<div>     - The plan should</div>
+<div>          - Define what it is to be managed, with an identification scheme</div>
+<div>          - Define who is responsible for CM procedures and submitting controlled entities to the CM team</div>
+<div>          - Define policies for version management and change control which all team members must use</div>
+<div>          - Specify the tools to be used, and procedures for using them</div>
+<div>          - Describe the structure of the CM database and the information that should be contained with it</div>
+<div><br/></div>
+<div>Configuration Item Identification</div>
+<div>     - The first step in producing an identification scheme is to determine which products or artefacts should be controlled</div>
+<div>          - Typical products include</div>
+<div>               - Quality Control - Including CM procedures</div>
+<div>               - Project plans</div>
+<div>               - Requirements</div>
+<div>               - Test Documentation</div>
+<div>               - Test Plan/Scripts/Data/Results</div>
+<div>               - Analysis Documentaiton</div>
+<div>               - Design Documentation</div>
+<div>               - Program Code</div>
+<div>               - User documentation</div>
+<div>               - Training Material</div>
+<div><br/></div>
+<div>Configuration Item (CI):</div>
+<div>     - The scheme should guarantee the ID for each CI is unique</div>
+<div>          - This follows from a structured, hierarchical breakdown of the product</div>
+<div>     - The scheme should be flexible, so that new classes of artefact can be added later on as the project develops</div>
+<div>     - The ID should be able to be embedded in the artefact</div>
+<div>          - The ID should be able to embedded in the artefact </div>
+<div>               - E.G. a comment in the code</div>
+<div>               - If existing artefacts are inherited from other projects, ideally their new ID should correspond to their existing one so they don’t have to be re-written</div>
+<div>     - IDs should be meaningful to the project team</div>
+<div><br/></div>
+<div>Change Control</div>
+<div>     - Change control is about managing the evolution of individual components in the system to maintain overall integrity</div>
+<div>          - This is achieved through the mechanism of Baselines</div>
+<div>     - A baseline is a product that has been formally reviewed and agreed upon</div>
+<div>          - The baselines serves as the basic for further development</div>
+<div>               - Throughout the life of a project, baselines will be made at regular intervals</div>
+<div>               - After “baselining”, any subsequent changes to a product are subjected to the same quality procedures again.</div>
+<div>     - Definitive versions of all products are available at all times</div>
+<div><br/></div>
+<div>Version Control tools allow documents / products to be checked in and out of a central database</div>
+<div>     - The CM team can track and control changes</div>
+<div><br/></div>
+<div>The check-in process can include integrating changes</div>
+<div>     - Proposed modifications are analysed and merged with the existing product</div>
+<div><br/></div>
+<div>Using CM for defect management</div>
+<div>     - After initial development, software change is driven by errors</div>
+<div>     - When a test fails (or when a user reports a bug), a defect is recorded.</div>
+<div>     - The defect (fault) is investigated, and where appropriate, software change requested is raised.</div>
+<div>          - Change requests will be considered in terms of its impact, risk, cost and urgency before being assigned to a developer to be implemented</div>
+<div>     - Once a change request is approved, the developer will check out the code, implement changes, run regression tests according to the test plan, check in the changed code and submit the changes for approval</div>
+<div>     - The changes can then be incorporated into the next baselines</div>
+<div>     - Details of the fault, the analysis and any changes made are all submitted to the CM database</div>
+<div>     - The status of fault reports and change requests in the database are monitored through status accounting by the project management.</div>
+<div>          - Also metrics can be generated based around</div>
+<div>               - The types of fault discovered</div>
+<div>               - The severity</div>
+<div>               - How they were discovered</div>
+<div>          - Which can help to improve the development process for the future</div>
+<div>               - E.G. need more testing, analysis, personnel</div>
+<div><br/></div>
+<div><br/></div>
+</span>
+</div></body></html> 

@@ -1,0 +1,218 @@
+<html>
+<head>
+  <title>Linked Lists</title>
+  <basefont face="Segoe UI" size="2" />
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="exporter-version" content="Evernote Windows/308716 (en-US, DDL); Windows/10.0.0 (Win64);"/>
+  <style>
+    body, td {
+      font-family: Segoe UI;
+      font-size: 10pt;
+    }
+  </style>
+</head>
+<body>
+<a name="739"/>
+<h1>Linked Lists</h1>
+<div>
+<table bgcolor="#D4DDE5" border="0">
+<tr><td><b>Created:</b></td><td><i>14/05/2016 20:13</i></td></tr>
+<tr><td><b>Updated:</b></td><td><i>14/05/2016 20:42</i></td></tr>
+<tr><td><b>Author:</b></td><td><i>ahmedbodi@crypto-expert.com</i></td></tr>
+</table>
+</div>
+<br/>
+
+<div>
+<span>
+<div>Single Linked List</div>
+<div><br/></div>
+<div>An object is held within a block of memory. </div>
+<div>It is possible for an instance of a class to include a pointer to another instance of the same class</div>
+<div><br/></div>
+<div>A singly-linked list has a LIFO structure (Last-In, First-Out).</div>
+<div><br/></div>
+<div>The vector in STL is a singly linked list</div>
+<div>Using two classes. Element and LinkedList.</div>
+<div>The Element comprises the individual links</div>
+<div>The LinkedList is a manager class</div>
+<div><br/></div>
+<div><b>Linked List</b></div>
+<div>A sequence of links connected by pointers</div>
+<div>End of the list means pointer is at 0.</div>
+<div><br/></div>
+<div><b>Example</b></div>
+<div>Class LinkedList</div>
+<div>{</div>
+<div>     private:</div>
+<div>          Element* head;</div>
+<div>     public:</div>
+<div>          LinkedList::LinkedList()</div>
+<div>          {</div>
+<div>               // Sets the head to 0 (no elements)</div>
+<div>               head = 0;</div>
+<div>          }</div>
+<div>          LinkedList::~LinkedList()</div>
+<div>          {</div>
+<div>               Element* prior; // stored previous</div>
+<div>               while(head) // 0 at the end</div>
+<div>               {             </div>
+<div>                    prior = head; // store previous</div>
+<div>                    head = head-&gt;getNext(); // advance head</div>
+<div>                    delete prior; // destroy previous</div>
+<div>               }</div>
+<div>          }</div>
+<div>          void pushBack(int d)</div>
+<div>          {</div>
+<div>               Element* tmp = new Element(d);</div>
+<div>               tmp-&gt;setNext(0);</div>
+<div>               if(head)</div>
+<div>               {</div>
+<div>                    // Temporary Variable</div>
+<div>                    Element* current = head;</div>
+<div>                    // Move all the way till the end</div>
+<div>                    while(current-&gt;getNext())</div>
+<div>                    {</div>
+<div>                         current = current-&gt;getNext();</div>
+<div>                    }</div>
+<div>                    // Set the End variable to the new object</div>
+<div>                    current-&gt;setNext(tmp);</div>
+<div>               }</div>
+<div>               else</div>
+<div>               {</div>
+<div>                    // This item is the only one</div>
+<div>                    head = tmp;</div>
+<div>               }</div>
+<div>          }</div>
+<div>          void pushFront(int d)</div>
+<div>          {</div>
+<div>               // Allocate memory for new element</div>
+<div>               Element* tmp = new Element(d);</div>
+<div>               tmp-&gt;setNext(head);</div>
+<div>               head = tmp;</div>
+<div>          }</div>
+<div>          void popFront()</div>
+<div>          {</div>
+<div>               Element* tmp = head;</div>
+<div>               if(head)</div>
+<div>               {</div>
+<div>                    head = head-&gt;getNext();</div>
+<div>                    delete tmp;</div>
+<div>               }</div>
+<div>          }</div>
+<div>          void popBack()</div>
+<div>          {</div>
+<div>               if(head)</div>
+<div>               {</div>
+<div>                    if(head-&gt;getNext() == 0)</div>
+<div>                    {</div>
+<div>                         // List is empty</div>
+<div>                         delete head;</div>
+<div>                         head = 0;</div>
+<div>                    }</div>
+<div>                    else</div>
+<div>                    {</div>
+<div>                         Element* nextToLast;</div>
+<div>                         Element* current = head;</div>
+<div>                         while(current-&gt;getNext()))</div>
+<div>                         {</div>
+<div>                              nextToLast = current;</div>
+<div>                              current = current-&gt;getNext();</div>
+<div>                         }</div>
+<div>                         nextToLast-&gt;setNext(0);</div>
+<div>                         delete current;</div>
+<div>                    }</div>
+<div>               }</div>
+<div>          }</div>
+<div>          int getBack()</div>
+<div>          {          </div>
+<div>               if(head)</div>
+<div>               {</div>
+<div>                    Element* current = head;</div>
+<div>                    while(current-&gt;getNext())</div>
+<div>                    {</div>
+<div>                         current = current-&gt;getNext();</div>
+<div>                    }</div>
+<div>                    return current-&gt;getData();</div>
+<div>               }</div>
+<div>          }</div>
+<div>          int getFront()</div>
+<div>          {</div>
+<div>               if(head)</div>
+<div>               {</div>
+<div>                    return head-&gt;getData);</div>
+<div>               }</div>
+<div>          }</div>
+<div>          void display()</div>
+<div>          {</div>
+<div>               Element* search = head;</div>
+<div>               while(search)</div>
+<div>               {</div>
+<div>                    cout &lt;&lt; search-&gt;getData();</div>
+<div>                    search = search-&gt;getNext();</div>
+<div>               }</div>
+<div>          }</div>
+<div>          void pushSort(int d)</div>
+<div>          {</div>
+<div>               Element* tmp = new Element(d);</div>
+<div>               Element* current = head;</div>
+<div>               Element* prior = 0;</div>
+<div><br/></div>
+<div>               while(current)</div>
+<div>               {</div>
+<div>                    if(current-&gt;getData() &lt;= d)</div>
+<div>                    {</div>
+<div>                         prior = current;</div>
+<div>                         current = current-&gt;getNext();</div>
+<div>                    }</div>
+<div>                    else</div>
+<div>                    {</div>
+<div>                         if(prior)</div>
+<div>                         {</div>
+<div>                              prior-&gt;setNext(tmp);</div>
+<div>                              tmp-&gt;setNext(current);</div>
+<div>                              return;</div>
+<div>                         }</div>
+<div>                         tmp-&gt;setNext(current);</div>
+<div>                         head = tmp;</div>
+<div>                         return;</div>
+<div>                    }</div>
+<div>               }</div>
+<div>               if(prior)</div>
+<div>               {</div>
+<div>                    prior-&gt;setNext(tmp);</div>
+<div>                    tmp-&gt;setNext(0);</div>
+<div>                    return;</div>
+<div>               }</div>
+<div>               else</div>
+<div>               {</div>
+<div>                    tmp-&gt;setNext(current);</div>
+<div>                    head = tmp;</div>
+<div>               }</div>
+<div>          }</div>
+<div>}</div>
+<div>Class Element</div>
+<div>{</div>
+<div>     private:</div>
+<div>          Element* next;</div>
+<div>          int data;</div>
+<div>     public:</div>
+<div>          int getData();</div>
+<div>          {</div>
+<div>               return data;</div>
+<div>          }</div>
+<div>          void setNext(Element* tmp);</div>
+<div>          {</div>
+<div>               next = tmp;</div>
+<div>          }</div>
+<div>          Element* getNext()</div>
+<div>          {</div>
+<div>               return next;</div>
+<div>          }</div>
+<div>          Element::Element(int d)</div>
+<div>          {</div>
+<div>               data = d;</div>
+<div>          }</div>
+<div>}</div>
+</span>
+</div></body></html> 
